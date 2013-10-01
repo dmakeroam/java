@@ -1,0 +1,164 @@
+*** จำโจทย์ออกมา แล้วก็มาทำใหม่นะ อาจจะไม่เหมือนเดิม 5555
+** จริงๆ มันไม่ตายตัว มีหลายวิธีไม่ตายตัวนะ -..-
+ 
+ 
+1. สุ่มเลขสามตัว แสดงออกมา แล้วหาค่ากลาง
+ 
+class Exam1{
+                public static void main(String[] args){
+                                int a = ( (int)(Math.random() * (95+5+1)-5) );
+                                int b = ( (int)(Math.random() * (95+5+1)-5) );
+                                int c = ( (int)(Math.random() * (95+5+1)-5) );
+                                System.out.println("a = "+a+"\nb = "+b+"\nc = "+c+"\n");
+                                if (a > b) {
+                                                if (b > c) {
+                                                                System.out.println("b ("+b+") is the median");
+                                                }
+                                                else if (a > c) {
+                                                                System.out.println("c ("+c+") is the median");
+                                                }
+                                                else{
+                                                                System.out.println("a ("+a+") is the median");
+                                                }
+                                }
+                                else{
+                                                if (a > c){
+                                                                System.out.println("a ("+a+") is the median");
+                                                }
+                                                else if (b > c){
+                                                                System.out.println("c ("+c+") is the median");;
+                                                }
+                                                else{
+                                                                System.out.println("b ("+b+") is the median");
+                                                }
+                                }
+                }
+}
+ 
+ 
+ 
+2. รับค่าเลขจำนวนเต็มหกหลัก เอาสองตัวกลาง สองตัวหลัง มา + - * และเฉลื่ย
+ 
+import java.util.Scanner;
+class Exam2{
+                public static void main(String[] args){
+                                Scanner sc = new Scanner(System.in);
+                                System.out.print("Enter Number : ");
+                                int input = sc.nextInt();
+                                int mid = input%10000/100;
+                                int last = input%100;
+                                System.out.println(mid+" + "+last+" = "+(mid+last));
+                                System.out.println(mid+" - "+last+" = "+(mid-last));
+                                System.out.println(mid+" * "+last+" = "+(mid*last));
+                                System.out.println("Mean of "+mid+", "+last+" = "+((mid+last)/2.0));
+                }
+}
+ 
+ 
+ 
+3. สุ่มเบอร์ 10 หลัก 3 หลักแรกไม่มีเลข 8,9  สามหลักกลางอยู่ในช่วง100-888 ที่เหลือไม่กำหนด
+ 
+import java.text.DecimalFormat;
+class Exam3{
+                public static void main(String[] args){
+                                DecimalFormat fmt = new DecimalFormat("0000");
+                                int a = ((int)(Math.random() * (7+1)));
+                                int b = ((int)(Math.random() * (7+1)));
+                                int c = ((int)(Math.random() * (7+1)));
+                                int d = ((int)(Math.random() * (888-100+1)+100));
+                                String e = (fmt.format(Math.random() * (9999+1)));
+                                System.out.println("Tel : "+a+b+c+"-"+d+"-"+e);
+                }
+}
+ 
+ 
+ 
+ 
+ 
+4. ถ้ากรอกตัวอักษรเล็กให้พิมพ์ตัวอักษรใหญ่ ถ้ากรอกตัวอักษรใหญ่ให้พิมพ์ตัวอักษรเล็ก
+ 
+import java.util.Scanner;
+class Exam4{
+                public static void main(String[] args){
+                                Scanner sc = new Scanner(System.in);
+                                System.out.print("Enter Letter : ");
+                                String input = sc.nextLine();
+                                int letter = ( (int)input.charAt(0) );
+                                if ( letter>='A' & letter<='Z' ){
+                                                System.out.println( (char)(letter+32) );
+                                }
+                                else if ( letter>='a' & letter<='z' ){
+                                                System.out.println( (char)(letter-32) );
+                                }
+                                else{
+                                                System.out.println("Not an Alphabelt");
+                                }
+                }
+}
+ 
+ 
+ 
+5. สุ่มตัวอักษร A-Z
+ 
+class Exam5{
+                public static void main(String[] args){
+                                System.out.println( (char)((int)(Math.random() * ('Z'-'A'+1)+'A')));
+                }
+}
+ 
+ 
+ 
+6. รับตัวอักษรจากผู้ใช้ ถ้า 0-9 แสดงว่า Numbers ถ้า a-z แสดงว่า LowerCase ถ้า A-Z แสดงว่า UpperCase ถ้าอย่างอื่นให้แสดงว่า Others ถ้าเกิน 1 ตัวให้บอกว่า Invalid Character
+ 
+import java.util.Scanner;
+import java.text.DecimalFormat;
+class Exam6{
+                public static void main(String[] args){
+                                Scanner sc = new Scanner(System.in);
+                                System.out.print("Input : ");
+                                String input = sc.nextLine();
+                                int letter = ((int)input.charAt(0));
+                                if( input.length() == 1 ){
+                                                if( letter>='0' & letter <= '9' ){
+                                                                System.out.println("Numbers");
+                                                }
+                                                else if ( letter >='a' & letter <= 'z' ){
+                                                                System.out.println("Lower Case");
+                                                }
+                                                else if ( letter >='A' & letter <= 'Z' ){
+                                                                System.out.println("Upper Case");
+                                                }
+                                                else{
+                                                                System.out.println("Others");
+                                                }
+                                }
+                                else{
+                                                System.out.println("Invaild Character");
+                                }
+                }
+}
+ 
+ 
+ 
+7. รับค่า miles hours minutes seconds แล้วมาแสดงออกมาเป็นกิโลเมตรต่อชม.
+ 
+import java.util.Scanner;
+import java.text.DecimalFormat;
+class Exam7{
+                public static void main(String[] args){
+                                Scanner sc = new Scanner(System.in);
+                                System.out.print("Enter Miles : ");
+                                int miles = sc.nextInt();
+                                System.out.print("Enter Hours : ");
+                                int hr = sc.nextInt();
+                                System.out.print("Enter Minutes : ");
+                                int min = sc.nextInt();
+                                System.out.print("Enter Seconds : ");
+                                int sec = sc.nextInt();
+ 
+                                double time = hr+(min/60.0)+(sec/60.0/60.0);
+ 
+                                DecimalFormat fmt = new DecimalFormat("0.00");
+                                System.out.println("Result : "+ fmt.format((miles*1.609344)/time)+" KM/Hr");
+                }
+}
