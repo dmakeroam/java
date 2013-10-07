@@ -1,0 +1,176 @@
+//Quiz1
+class Quiz1{
+    public static void main(String[] args){
+        double y = 3;
+        double sum = 0;
+        for(int x = 1;x<=49;x++){
+            sum += (x/y);
+            y += 2;
+        }
+        //p'thery -> for(int x = 1;x<=49;sum += (x/y),x++,y += 2);
+        System.out.print(sum);
+    }
+}
+ 
+//Quiz2
+xxxo
+xxxoo
+xxxooo
+xxxoooo
+oooooooo
+ooooooooo
+oooooooo
+xxxoooo
+xxxooo
+xxxoo
+xxxo
+ 
+ 
+//Quiz3
+class Quiz3{
+    public static boolean equalArrays(int a1[], int a2[]){
+        if(a1.length != a2.length){
+            return false;
+        }
+        for(int i = 0;i<a1.length;i++){
+            if(a1[i] != a2[i])
+                return false;
+        }
+        return true;
+    }
+    //just a test (no need to write in exam)
+    public static void main(String[] args){
+        int a1[] = {1,2,3};
+        int a2[] = {1,2,3,4};
+        System.out.print(equalArrays(a1,a2));
+    } }
+ 
+ 
+//Quiz4
+ 
+ 
+class Delivery{
+    private String deliveryNumber;
+    private int code;
+    private double weight;
+    private double fee;
+ 
+    Delivery(int year, int no, int code, double weight){
+        this.weight = weight;
+        this.code = code;
+        String dNo = "";
+        if(no>=1 & no<=9)
+            dNo = "000"+no;
+        else if(no<=99)
+            dNo = "00"+no;
+        else if(no<=999)
+            dNo = "0"+no;
+        else if(no<=9999)
+            dNo = ""+no;
+ 
+        deliveryNumber = ""+year+dNo;
+ 
+        if(code == 1){
+            if(weight<5)
+                fee = 10.00;
+            else if(weight<=20)
+                fee = 25.50;
+            else if(weight>20)    
+                fee = 40.00;
+        }
+        else if(code == 2){
+            if(weight<5)
+                fee = 50.00;
+            else if(weight>=5)    
+                fee = 100.00;
+        }
+    } //end of Delivery Constructor ^^
+ 
+    //Getters Method ^^
+    public String getDeliveryNumber(){
+        return deliveryNumber;
+    }
+    public int getCode(){
+        return code;
+    }
+    public double getWeight(){
+        return weight;
+    }
+    public double getFee(){
+        return fee;
+    }
+ 
+    //Setters Method ^^
+    public void setCode(int code){
+        this.code = code;
+    }
+    public void setWeight(double weight){
+        this.weight = weight;
+    }
+    public void setFee(double fee){
+        this.fee = fee;
+    }
+ 
+    //toString Method ^^
+    public String toString(){
+        return "Delivery Number : "+getDeliveryNumber()+
+               "\nCode : "+getCode()+
+               "\nWeight : "+getWeight()+
+               "\nFee : "+getFee();
+    }
+}
+ 
+import java.util.Scanner;
+class TestDelivery{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int dNo = 0;
+        int year = 0;
+        double weight = 0;
+        int code = 0;
+        do{
+            System.out.print("Enter Delivery Number : ");
+            dNo = sc.nextInt();
+        }
+        while(dNo<1 | dNo>9999);
+ 
+        do{
+            System.out.print("Enter Year : ");
+            year = sc.nextInt();
+        }
+        while(year<2001 | year > 2050);
+ 
+        do{
+            System.out.print("Enter Weight : ");
+            weight = sc.nextDouble();
+        }
+        while(weight < 0.10 | weight > 100);
+ 
+        do{
+            System.out.print("Enter Distance Code : ");
+            code = sc.nextInt();
+        }
+        while(code != 1 & code !=2);
+ 
+        Delivery dl1 = new Delivery(year,dNo,code,weight);
+ 
+        System.out.println(dl1);  //revoke toString Method ^^
+ 
+        //Revoke Setters Method ^^
+        dl1.setCode(2);
+        dl1.setWeight(12.50);
+        dl1.setFee(50.50);
+ 
+ 
+        //Revoke Getters Method ^^
+        System.out.println("getDeliveryNumber() : "+dl1.getDeliveryNumber());
+        System.out.println("getCode(): "+dl1.getCode());
+        System.out.println("getWeight() : "+dl1.getWeight());
+        System.out.println("getFee() : "+dl1.getFee());
+    } }
+ 
+//Quiz5
+จำไม่ได้ค่ะ - -"
+รู้แต่ว่าข้อแรกอ่ะ ไม่มีค่า เพราะจองแีรมไว้เฉยๆ ยังไม่ได้ init - -"
+และก็มีข้อหลังๆ ที่หลอก มี int ตัวแปรในลูป เพราะฉะนั้นทุกๆ ครั้งที่วน ค่ามันก็จะเริ่มใหม่
+และก็ข้อบนๆ ตัวเลขที่ประกาศใน loop for ออกนอกลูป for แล้วจะหายไปนะ ^^
