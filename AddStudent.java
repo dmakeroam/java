@@ -22,7 +22,7 @@ public class AddStudent{
 				i++;
 			}
 			System.out.println();
-			System.out.println("Do you want to owadd another student? (Y/N)");
+			System.out.println("Do you want to add another student? (Y/N)");
 			choice=sc.next();
 		}
 	}
