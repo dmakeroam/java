@@ -19,8 +19,18 @@ public class ShiftWords {
                 case '!':
                 case '/': 
                 case ' ': System.out.print(e); break;                    
-                default : System.out.print((char)(e+3)); break;
-            }         
+                default : 
+                if(!Character.isLowerCase(e) && (e+3)>90){
+                    System.out.print((char)(((e+3)-65)%26+65));
+                }
+                else if(Character.isLowerCase(e) && (e+3)>122){
+                    System.out.print((char)(((e+3)-97)%26+97));
+                }
+                else{
+                    System.out.print((char)(e+3));
+                }
+                break;
         }
+    }
     }
 }
