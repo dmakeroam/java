@@ -17,9 +17,8 @@ public class ShiftWords {
                 case '*':
                 case '(':
                 case '!':
-                case '/':
-                break;
-                case ' ': System.out.print(" "); break;
+                case '/': 
+                case ' ': System.out.print(e); break;                    
                 default : System.out.print((char)(e+3)); break;
             }         
         }
