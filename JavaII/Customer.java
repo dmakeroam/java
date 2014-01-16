@@ -10,7 +10,6 @@ public class Customer {
     private String[] custPhone;
     private String custEmail;
     private Date custBirth;
-    private static int n;
 
     public Customer() {
         this(null,null,null);
@@ -20,7 +19,7 @@ public class Customer {
         this.custAdd = custAdd;
         this.custPhone = custPhone;
         this.custBirth = custBirth;
-        n++;
+        this.custId=10001;
     }
 
     public long getCustId() {
@@ -28,8 +27,7 @@ public class Customer {
     }
 
     public long genCustomerId(){
-        this.custId=10000+n;
-        return custId;
+        return custId++;
     }
 
     public String getCustName() {

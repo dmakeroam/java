@@ -10,7 +10,9 @@ public class TestCustomer {
         Customer [] cust=new Customer[num];
         for(int i=0;i<cust.length;i++){
             cust[i]=new Customer();
-            cust[i].genCustomerId();
+            for(int j=0;j<i;j++){   
+                cust[i].genCustomerId();
+            }
             cust[i].setCustName("Bayer");
             cust[i].setCustSurname("Tree");
             cust[i].setCustEmail("cpf@ruk-com.in.th");
